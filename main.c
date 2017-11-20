@@ -1,4 +1,4 @@
-#include <pthread.h>
+#include "/usr/include/pthread.h"
 #include <sched.h>
 #include <semaphore.h>
 #include <stdio.h>
@@ -10,7 +10,7 @@
 #define MAXREAD 5
 #define MAXWRITETHREAD 2
 
-
+void annouce_access_request();
 void access_database();     /* prototypes */
 
 void* reader(void*);
@@ -23,7 +23,7 @@ int write_request = 0;
 
 int main()
 {
-    pthread_t readers[MAXTHREAD],writerTh;
+    pthread_t readers[MAXTHREAD],writerTh[MAXWRITETHREAD];
     int index;
     int ids[MAXTHREAD]; /* readers and initialize mutex, q and db-set them to 1 */
     sem_init (&q,0,1);
