@@ -6,7 +6,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define MAXTHREAD 5  /* define # readers */
+#define MAXTHREAD 6  /* define # readers */
 #define MAXREAD 5
 #define MAXWRITETHREAD 2
 
